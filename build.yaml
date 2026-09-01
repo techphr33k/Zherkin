@@ -6,4 +6,4 @@
 # `artifact-name` to assign a name to distinguish build outputs from each other:
 include:
 board: nice_nano_v2
-shield: zherkin
+shield: Zherkin
