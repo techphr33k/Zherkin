@@ -10,4 +10,4 @@
 include:
 
 board: nice_nano
-shield: zherkin
+shield: klorhand
