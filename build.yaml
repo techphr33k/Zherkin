@@ -9,5 +9,5 @@
 # shield: [ "corne_left", "corne_right" ]
 include:
 
-board: nice_nano_v2
+board: nice_nano
 shield: zherkin
