@@ -1,2 +1,3 @@
 config SHIELD_ZHERKIN
-    def_bool $(shields_list_contains,zherkin)
+    def_bool $(shields_list_contains,zherkin)'
+    select SHIELD_ZHERKIN
