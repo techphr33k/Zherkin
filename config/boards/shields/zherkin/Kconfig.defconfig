@@ -1,6 +1,0 @@
-if SHIELD_ZHERKIN
-
-config ZMK_KEYBOARD_NAME
-    default "zherkin"
-
-endif
