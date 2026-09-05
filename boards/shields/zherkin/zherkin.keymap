@@ -85,12 +85,3 @@
         };
     };
 };
-
-//                 BLANK {
-//            display-name = "BLANK";
-//            bindings = <
-//                &none    &none    &none    &none    &none    &none     &none    &none    &none    &none 
-//                &none    &none    &none    &none    &none    &none     &none    &none    &none    &none 
-//                &none    &none    &none    &none    &none    &none     &none    &none    &none    &none 
-//            >;
-//        };
