@@ -3,80 +3,83 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#define QWERTY 0
-#define L1 1
-#define L2 2
-#define L3 3
-#define R1 4
-#define R2 5
-#define R3 6
-
 &lt {
-    tapping-term-ms = <180>;
+    tapping-term-ms = <180>;     // LAYER TAP SPEED default=200
 };
 
 &mt {
-    tapping-term-ms = <180>;
+    tapping-term-ms = <180>;    // MOD-TAP SPEED default=200
 };
 
+    combos {
+        compatible = "zmk,combos";
+        combo_space {
+            timeout-ms = <50>;
+            key-positions = <10 19>;
+            bindings = <&kp SPACE>;
+        };
+ };
+
 / {
+
+#define  QWERTY 0
+#define  L1 1
+#define  L2 2
+#define  L3 3
+#define  R1 4
+#define  R2 5
+#define  R3 6
+
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+           QWERTY  {
             bindings = <
-                &kp Q       &kp W      &kp E      &kp R      &kp T           &kp Y           &kp U      &kp I           &kp O          &kp P
-                &kp A       &kp S      &kp D      &kp F      &kp G           &kp H           &kp J      &kp K           &kp L          &kp SEMI
-                &lt 3 Z     &kp X      &kp C      &kp V      &kp B           &kp N           &kp M      &kp COMMA       &kp DOT        &kp FSLH
+                &kp Q      &kp W     	&kp E     	&kp R     	&kp T    	    &kp Y     	    &kp U     	&kp I     	    &kp O     	   &kp P
+                &lt 1 A    &lt 2 S      &kp D     	&kp F     	&mt LSHIFT G    &mt RSHIFT H    &kp J     	&kp K     	    &lt 5 L        &lt 4 SEMI
+                &lt 3 Z    &kp X     	&kp C     	&kp V     	&kp B    	    &kp N     	    &kp M     	&mt RCTRL COMMA &mt RALT DOT   &lt 6 FSLH
             >;
         };
-
-        layer_1 {
+                L1 {
             bindings = <
-                &none    &none    &none    &none    &none    &none    &none    &none    &none    &kp BSPC
-                &trans   &none    &none    &none    &none    &none    &none    &none    &none    &none
-                &none    &none    &none    &none    &none    &none    &none    &none    &none    &kp RET
+                &none    &kp DEL    &kp K_UNDO  &kp CAPS     &kp K_FIND      &kp KP_PLUS    &kp LBRC    &kp RBRC    &kp TILDE   &kp BSPC 
+                &trans   &kp K_CUT  &kp K_COPY  &kp K_PASTE  &none           &KP KP_EQUAL   &kp LPAR    &kp RPAR    &kp LT      &kp GT 
+                &none    &none      &none       &kp PIPE     &kp ENT         &kp KP_MINUS   &kp LBKT    &kp RBKT    &kp UNDER   &kp RET 
             >;
         };
-
-        layer_2 {
+                L2 {
             bindings = <
-                &none    &none    &none    &none    &none    &none    &none    &none    &none    &none
-                &none    &trans   &none    &none    &none    &none    &none    &none    &none    &none
-                &none    &none    &none    &none    &none    &none    &none    &none    &none    &none
+                &none    &none    &none    &none    &none    &none     &none    &none    &none    &none 
+                &none    &trans   &none    &none    &none    &none     &none    &none    &none    &none 
+                &none    &none    &none    &none    &none    &none     &none    &none    &none    &none 
             >;
         };
-
-        layer_3 {
+                L3 {
             bindings = <
-                &bootloader  &bt BT_CLR     &bt BT_PRV     &bt BT_NXT     &none           &none           &none    &none    &none    &none
-                &none        &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3    &bt BT_SEL 4    &none    &none    &none    &none
-                &trans       &none          &none          &none          &none           &none           &none    &none    &none    &none
+                &bootloader     &none           &bt BT_PRV      &bt BT_NXT    &none           &none           &none    &none    &none    &none 
+                &bt BT_CLR_ALL  &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4    &none    &none    &none    &none     
+                &trans          &none           &none           &none         &none           &none           &none    &none    &none    &none
             >;
         };
-
-        layer_4 {
+                R1 {
             bindings = <
-                &kp ESC  &none    &none    &none    &none    &none    &none    &none    &none    &none
-                &none    &none    &none    &none    &none    &none    &none    &none    &none    &trans
-                &kp TAB  &none    &none    &none    &none    &none    &none    &none    &none    &none
+                &kp ESC  &none    &none    &none    &none    &none     &none    &none    &none    &none 
+                &none    &none    &none    &none    &none    &none     &none    &none    &none    &trans 
+                &kp TAB  &none    &none    &none    &none    &none     &none    &none    &none    &none 
             >;
         };
-
-        layer_5 {
+                R2 {
             bindings = <
-                &none    &none    &none    &none    &none    &none    &none    &none    &none    &none
-                &none    &none    &none    &none    &none    &none    &none    &none    &trans   &none
-                &none    &none    &none    &none    &none    &none    &none    &none    &none    &none
+                &none    &none    &none    &none    &none    &none     &none    &none    &none    &none 
+                &none    &none    &none    &none    &none    &none     &none    &none    &trans   &none 
+                &none    &none    &none    &none    &none    &none     &none    &none    &none    &none 
             >;
         };
-
-        layer_6 {
+                R3 {
             bindings = <
-                &none    &none    &none    &none    &none    &none    &none    &none    &none    &none
-                &none    &none    &none    &none    &none    &none    &none    &none    &none    &none
-                &none    &none    &none    &none    &none    &none    &none    &none    &none    &trans
-            >;
+                &none    &none    &none    &none    &none    &none     &none    &none    &none    &none 
+                &none    &none    &none    &none    &none    &none     &none    &none    &none    &none 
+                &none    &none    &none    &none    &none    &none     &none    &none    &none    &trans
         };
     };
 };
