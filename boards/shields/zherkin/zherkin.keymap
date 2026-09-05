@@ -10,10 +10,6 @@
     tapping-term-ms = <150>;    // MOD-TAP SPEED default=200
 };
 
-    // define KEYMAP LAYERS here
-
-
-
 / {
 
 #define  QWERTY 0
@@ -24,12 +20,10 @@
 #define  R2 5
 #define  R3 6
 
-
     keymap {
         compatible = "zmk,keymap";
 
            QWERTY  {
-            display-name = "QWERTY";
             bindings = <
                 &kp Q      &kp W     	&kp E     	&kp R     	&kp T    	    &kp Y     	    &kp U     	&kp I     	    &kp O     	   &kp P
                 &lt 1 A    &lt 2 S    &kp D     	&kp F     	&mt LSHIFT G    &mt RSHIFT H    &kp J     	&kp K     	    &lt 5 L        &lt 4 SEMI
@@ -37,7 +31,6 @@
             >;
         };
                 L1 {
-            display-name = "L1";
             bindings = <
                 &none    &none    &none    &none    &none    &none     &none    &none    &none    &kp BSPC 
                 &trans   &none    &none    &none    &none    &none     &none    &none    &none    &none 
@@ -45,7 +38,6 @@
             >;
         };
                 L2 {
-            display-name = "L2";
             bindings = <
                 &none    &none    &none    &none    &none    &none     &none    &none    &none    &none 
                 &none    &trans   &none    &none    &none    &none     &none    &none    &none    &none 
@@ -53,7 +45,6 @@
             >;
         };
                 L3 {
-            display-name = "L3";
             bindings = <
                 &bootloader &bt BT_CLR      &bt BT_PRV    &bt BT_NXT    &none           &none           &none    &none    &none    &none 
                 &none       &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4    &none    &none    &none    &none     
@@ -61,7 +52,6 @@
             >;
         };
                 R1 {
-            display-name = "R1";
             bindings = <
                 &kp ESC  &none    &none    &none    &none    &none     &none    &none    &none    &none 
                 &none    &none    &none    &none    &none    &none     &none    &none    &none    &trans 
@@ -69,7 +59,6 @@
             >;
         };
                 R2 {
-            display-name = "R2";
             bindings = <
                 &none    &none    &none    &none    &none    &none     &none    &none    &none    &none 
                 &none    &none    &none    &none    &none    &none     &none    &none    &trans   &none 
@@ -77,7 +66,6 @@
             >;
         };
                 R3 {
-            display-name = "R3";
             bindings = <
                 &none    &none    &none    &none    &none    &none     &none    &none    &none    &none 
                 &none    &none    &none    &none    &none    &none     &none    &none    &none    &none 
