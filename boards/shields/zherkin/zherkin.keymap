@@ -11,6 +11,9 @@
     tapping-term-ms = <180>;    // MOD-TAP SPEED default=200
 };
 
+
+/ {
+
     combos {
         compatible = "zmk,combos";
         combo_space {
@@ -19,8 +22,6 @@
             bindings = <&kp SPACE>;
         };
  };
-
-/ {
 
 #define  QWERTY 0
 #define  L1 1
@@ -49,9 +50,9 @@
         };
                 L2 {
             bindings = <
-                &none    &none    &none    &none    &none    &none     &none    &none    &none    &none 
-                &none    &trans   &none    &none    &none    &none     &none    &none    &none    &none 
-                &none    &none    &none    &none    &none    &none     &none    &none    &none    &none 
+                &none    &none    &none    &none    &none    &none     &none    &none       &none          &none 
+                &none    &trans   &none    &none    &none    &none     &kp LEFT &kp DOWN    &kp UP         &kp RIGHT 
+                &none    &none    &none    &none    &none    &none     &kp HOME &kp PG_UP   &kp PG_DOWN    &kp END
             >;
         };
                 L3 {
