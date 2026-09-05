@@ -2,6 +2,16 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+&lt {
+    tapping-term-ms = <150>;     // LAYER TAP SPEED default=200
+};
+
+&mt {
+    tapping-term-ms = <150>;    // MOD-TAP SPEED default=200
+};
+
+    // define KEYMAP LAYERS here
+
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -9,10 +19,67 @@
         default_layer {
             display-name = "QWERTY";
             bindings = <
-                &kp Q &kp W &kp E &kp R &kp T    &kp Y &kp U &kp I &kp O &kp P
-                &kp A &kp S &kp D &kp F &kp G    &kp H &kp J &kp K &kp L &kp O
-                &kp Z &kp X &kp C &kp V &kp B    &kp N &kp M &kp O &kp O &kp O
+                &kp Q     	&kp W     	&kp E     	&kp R     	&kp T    	    &kp Y     	    &kp U     	&kp I     	    &kp O     	    &kp P
+                &lt L1 A    &lt L2 S    &kp D     	&kp F     	&mt LSHIFT G    &mt RSHIFT H    &kp J     	&kp K     	    &lt R2 L        &lt R1 SEMI
+                &lt L3 Z    &kp X     	&kp C     	&kp V     	&kp B    	    &kp N     	    &kp M     	&mt RCTRL COMMA &mt RALT DOT    &lt R3 FSLH
+            >;
+        };
+                L1 {
+            display-name = "L1";
+            bindings = <
+                &none    &none    &none    &none    &none    &none     &none    &none    &none    &kp BSPC 
+                &none    &none    &none    &none    &none    &none     &none    &none    &none    &none 
+                &none    &none    &none    &none    &none    &none     &none    &none    &none    &kp RET 
+            >;
+        };
+                L2 {
+            display-name = "L2";
+            bindings = <
+                &none    &none    &none    &none    &none    &none     &none    &none    &none    &none 
+                &none    &none    &none    &none    &none    &none     &none    &none    &none    &none 
+                &none    &none    &none    &none    &none    &none     &none    &none    &none    &none 
+            >;
+        };
+                L3 {
+            display-name = "L3";
+            bindings = <
+                &bootloader &bt BT_CLR      &bt BT_PRV    &bt BT_NXT    &none           &none           &none    &none    &none    &none 
+                &none       &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4    &none    &none    &none    &none     
+                &trans      &none           &none         &none         &none           &none           &none    &none    &none    &none
+            >;
+        };
+                R1 {
+            display-name = "R1";
+            bindings = <
+                &kp ESC  &none    &none    &none    &none    &none     &none    &none    &none    &none 
+                &none    &none    &none    &none    &none    &none     &none    &none    &none    &none 
+                &kp TAB  &none    &none    &none    &none    &none     &none    &none    &none    &none 
+            >;
+        };
+                R2 {
+            display-name = "R2";
+            bindings = <
+                &none    &none    &none    &none    &none    &none     &none    &none    &none    &none 
+                &none    &none    &none    &none    &none    &none     &none    &none    &none    &none 
+                &none    &none    &none    &none    &none    &none     &none    &none    &none    &none 
+            >;
+        };
+                R3 {
+            display-name = "R3";
+            bindings = <
+                &none    &none    &none    &none    &none    &none     &none    &none    &none    &none 
+                &none    &none    &none    &none    &none    &none     &none    &none    &none    &none 
+                &none    &none    &none    &none    &none    &none     &none    &none    &none    &none 
             >;
         };
     };
 };
+
+//                 BLANK {
+//            display-name = "BLANK";
+//            bindings = <
+//                &none    &none    &none    &none    &none    &none     &none    &none    &none    &none 
+//                &none    &none    &none    &none    &none    &none     &none    &none    &none    &none 
+//                &none    &none    &none    &none    &none    &none     &none    &none    &none    &none 
+//            >;
+//        };
