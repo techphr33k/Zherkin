@@ -43,14 +43,14 @@
         };
                 L1 {
             bindings = <
-                &none    &kp DEL    &kp K_UNDO  &kp CAPS     &kp K_FIND      &kp KP_PLUS    &kp LBRC    &kp RBRC    &kp TILDE   &kp BSPC 
-                &trans   &kp K_CUT  &kp K_COPY  &kp K_PASTE  &none           &KP KP_EQUAL   &kp LPAR    &kp RPAR    &kp LT      &kp GT 
-                &none    &none      &none       &kp PIPE     &kp ENT         &kp KP_MINUS   &kp LBKT    &kp RBKT    &kp UNDER   &kp RET 
+                &none    &kp DEL    &kp K_UNDO  &kp CAPS     &kp K_FIND      &kp PLUS    &kp LBRC    &kp RBRC    &kp TILDE   &kp BSPC 
+                &trans   &kp K_CUT  &kp K_COPY  &kp K_PASTE  &none           &kp EQUAL   &kp LPAR    &kp RPAR    &kp LT      &kp GT 
+                &none    &none      &none       &kp PIPE     &kp ENT         &kp MINUS   &kp LBKT    &kp RBKT    &kp UNDER   &kp RET 
             >;
         };
                 L2 {
             bindings = <
-                &none    &none    &none    &none    &none    &none     &none    &none       &none          &none 
+                &none    &none    &none    &none    &none    &none     &none    &none       &kp APOS       &kp SQT
                 &none    &trans   &none    &none    &none    &none     &kp LEFT &kp DOWN    &kp UP         &kp RIGHT 
                 &none    &none    &none    &none    &none    &none     &kp HOME &kp PG_UP   &kp PG_DOWN    &kp END
             >;
